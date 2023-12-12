@@ -40,6 +40,8 @@
 <div class="Share">
     <div class="Share-head">
         <h2>Share</h2>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <!-- svelte-ignore a11y-no-static-element-interactions -->
         <i class="fas fa-times-circle" on:click />
     </div>
     <div class="Share-content">

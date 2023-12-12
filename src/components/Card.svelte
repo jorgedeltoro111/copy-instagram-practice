@@ -2,6 +2,7 @@
     import Comments from "./Comments.svelte";
     import Modal from "./Modal.svelte";
     import Share from "./Share.svelte";
+    import {likeCount} from "../store/store";
     import { blur } from "svelte/transition";
     export let username;
     export let avatar;
@@ -11,9 +12,18 @@
     export let comments;
 
     let isModal = false;
-    
+    let like = false;
+    let bookmark = false;
     function handleClick(){
       isModal = !isModal;
+    }
+    function handleLike(){
+      like = !like;
+      if(like){
+        likeCount.update(n => n + 1);
+      }else{
+        likeCount.update(n => n - 1);
+      }
     }
 </script>
 <style>
@@ -94,7 +104,6 @@
     .Card-description span {
       font-size: 14px;
     }
-    /*
     .active-like {
       color: #bc1888;
       animation: bounce linear 0.8s;
@@ -103,7 +112,7 @@
     }
     .active-bookmark {
       color: #f09433;
-    }*/
+    }
   
     @keyframes bounce {
       0% {
@@ -154,17 +163,29 @@
           </div>
       </div>
       <div class="Card-photo">
-          <figure>
+          <figure on:dblclick={handleLike}>
               <img src={photo} alt={username}/>
           </figure>
       </div>
       <div class="Card-icons">
           <div class="Card-icons-first">
-              <i class="fas fa-heart"/>
+              <!-- svelte-ignore a11y-no-static-element-interactions -->
+              <!-- svelte-ignore a11y-click-events-have-key-events -->
+              <i class="fas fa-heart" 
+                class:active-like={like}
+                on:click={handleLike}
+              />
+              <!-- svelte-ignore a11y-click-events-have-key-events -->
+              <!-- svelte-ignore a11y-no-static-element-interactions -->
               <i class="fas fa-paper-plane" on:click={handleClick}/>
           </div>
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
           <div class="Card-icons-second">
-              <i class="fas fa-bookmark"/>
+              <i class="fas fa-bookmark"
+                class:active-bookmark={bookmark}
+                on:click={() => (bookmark = !bookmark)}
+              />
           </div>
       </div>
       <div class="Card-description">
