@@ -1,3 +1,62 @@
+<style>
+    .Stories {
+      border: 1px solid rgba(219, 219, 219, 1);
+      border-radius: 4px;
+      margin: 1em 0;
+      padding: 0.5em 1em;
+      background-color: white;
+    }
+    .Stories-item img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+    .Stories-item {
+      display: flex;
+      align-items: center;
+      margin: 0 0 0.5em 0;
+    }
+    .Stories-item h2 {
+      font-size: 14px;
+      color: black;
+      margin: 0 0 0 0.5em;
+    }
+    .Stories-item h2 span {
+      display: block;
+      font-size: 9px;
+      text-transform: uppercase;
+      color: gray;
+    }
+    .Stories-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5em 0 0 0;
+    }
+    .Stories-head h2 {
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .Stories-head span {
+      font-size: 12px;
+      font-weight: normal;
+      color: black;
+    }
+    .Stories-items {
+      margin: 0.5em 0 0.5em 0;
+    }
+    .Stories-item-box {
+      width: 32px;
+      height: 32px;
+      border: double 2px transparent;
+      border-radius: 100%;
+      background-image: linear-gradient(#fff, #fff),
+        radial-gradient(circle at top left, #f09433, #bc1888);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+    }
+  </style>
+  
 <div class="Stories">
     <div class="Stories-container">
         <div class="Stories-head">
@@ -7,7 +66,7 @@
         <div class="Stories-items">
             <div class="Stories-item">
                 <div class="Stories-item-box">
-                    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.zaunk.com%2Fblog%2Frazas%2Fyorkshire-terrier-caracteristicas-y-cuidados%2F&psig=AOvVaw0hgoWqp7XerFiXUa21lmR6&ust=1702410177596000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIjH-72SiIMDFQAAAAAdAAAAABAD" alt="Profile">
+                    <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2023/07/13153446/Brazilian-Terrier-standing-in-the-yard-outdoors.jpg" alt="Profile">
                 </div>
                 <h2>
                     Jorge del Toro
