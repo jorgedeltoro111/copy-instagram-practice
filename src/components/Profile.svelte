@@ -1,3 +1,7 @@
+<script>
+  export let nickname;
+  export let name;
+</script>
 <style>
     .Profile-content {
       display: flex;
@@ -28,8 +32,8 @@
             <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2023/07/13153446/Brazilian-Terrier-standing-in-the-yard-outdoors.jpg" alt="Profile">
         </div>
         <div class="Profile-info">
-            <h2>jorge_del_toro</h2>
-            <span>Jorge Enrique Hernandez del Toro</span>
+            <h2>{nickname}</h2>
+            <span>{name}</span>
         </div>
     </div>
 </div>

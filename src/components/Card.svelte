@@ -1,5 +1,11 @@
 <script>
     import Comments from "./Comments.svelte";
+    export let username;
+    export let avatar;
+    export let location;
+    export let photo;
+    export let postComment;
+    export let comments;
 </script>
 <style>
     .Card {
@@ -79,6 +85,7 @@
     .Card-description span {
       font-size: 14px;
     }
+    /*
     .active-like {
       color: #bc1888;
       animation: bounce linear 0.8s;
@@ -87,7 +94,7 @@
     }
     .active-bookmark {
       color: #f09433;
-    }
+    }*/
   
     @keyframes bounce {
       0% {
@@ -115,37 +122,37 @@
   </style>
   
 <div class="Card">
-    <div class="Card-container">
-        <div class="Card-Header">
-            <div class="Card-user">
-                <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2023/07/13153446/Brazilian-Terrier-standing-in-the-yard-outdoors.jpg" alt="">
-                <h2>
-                  Terry
-                  <span>Guadalajara, Jalisco</span>
-                </h2>
-            </div>
-            <div class="Card-settings">
-                <i class="fas fa-ellipsis-h"/>
-            </div>
-        </div>
-        <div class="Card-photo">
-            <figure>
-                <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2023/07/13153446/Brazilian-Terrier-standing-in-the-yard-outdoors.jpg" alt="Profile">
-            </figure>
-        </div>
-        <div class="Card-icons">
-            <div class="Card-icons-first">
-                <i class="fas fa-heart"/>
-                <i class="fas fa-paper-plane"/>
-            </div>
-            <div class="Card-icons-second">
-                <i class="fas fa-bookmark"/>
-            </div>
-        </div>
-        <div class="Card-description">
-            <h3>terry</h3>
-            <span>Hola!</span>
-        </div>
-        <Comments/>
-    </div>
+  <div class="Card-container">
+      <div class="Card-Header">
+          <div class="Card-user">
+              <img src={avatar} alt={username}>
+              <h2>
+                {username}
+                <span>{location}</span>
+              </h2>
+          </div>
+          <div class="Card-settings">
+              <i class="fas fa-ellipsis-h"/>
+          </div>
+      </div>
+      <div class="Card-photo">
+          <figure>
+              <img src={photo} alt={username}/>
+          </figure>
+      </div>
+      <div class="Card-icons">
+          <div class="Card-icons-first">
+              <i class="fas fa-heart"/>
+              <i class="fas fa-paper-plane"/>
+          </div>
+          <div class="Card-icons-second">
+              <i class="fas fa-bookmark"/>
+          </div>
+      </div>
+      <div class="Card-description">
+          <h3>{username}</h3>
+          <span>{postComment}</span>
+      </div>
+      <Comments {comments}/>
+  </div>
 </div>
