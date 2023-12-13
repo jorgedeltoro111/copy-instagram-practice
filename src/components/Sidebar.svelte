@@ -5,6 +5,7 @@
 
     export let nickname;
     export let name;
+
 </script>
 <style>
     .Sidebar {
